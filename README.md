@@ -9,7 +9,7 @@
   * 使用浏览器的性能分析工具，得到性能分析图表，最著名的就是反向火焰图表，针对浏览器的加载和渲染一目了然。
   * 投入使用之前缺乏压力测试和性能测试
 
-### 性能优化（从用户输入网址到客户端展现，一步一步优化）
+### 性能优化（从用户输入网址到客户端展现，一步一步优化）此处用代码排版，为了格式
     1. 输入网址  					==> 告诉浏览器你要去哪里
     2. 浏览器查找DNS  				==> 网络世界是IP地址的世界，DNS就是ip地址的别名。从本地DNS到最顶级DNS一步一步的网上爬，直到命中需要访问的IP地址
             a. DNS预解析            使用CDN缓存，加快解析CDN寻找到目标地址（dns-prefetch）
@@ -90,8 +90,16 @@
 
 #### 所有性能优化总结为三个层面优化：物理层面的优化，设计层面的优化，代码层面的优化
 
+---
+
+#### 以下为上图表中一些概念的解释
+
+>问题：在http定义的时候，get本质上就是获取数据，post是发送数据的。get可以在一个TCP报文完成请求，但是post先发header，再发送数据。so，考虑好请求选型。        
+>>解释：参考这篇博客 [post为什么发送2次请求](http://blog.csdn.net/happy_xiahuixiax/article/details/72859762),以及百度[post分包发送](https://www.baidu.com/s?ie=utf-8&f=8&rsv_bp=0&rsv_idx=1&tn=baidu&wd=post%E5%88%86%E5%8C%85%E5%8F%91%E9%80%81&rsv_pq=bbd2757f000001af&rsv_t=178cxOFFXZuyb3beN121PbHfQWjC4QFZefWmbJ6kxKy4BB8LjkvACqGWwLI&rqlang=cn&rsv_enter=1&rsv_sug3=18&rsv_sug1=10&rsv_sug7=100)
+
 注：设计层优化最主要的核心：衡量如何花费最少代价实现页面功能  
 
 注：HTTP/2（超文本传输协议第2版，最初命名为HTTP 2.0）：
     是HTTP协议的的第二个主要版本，HTTP/2的目标包括异步连接复用，头压缩和请求反馈管线化并保留与HTTP 1.1的完全语义兼容。Google Chrome、Mozilla Firefox、Microsoft Edge和Opera已支持HTTP/2，并默认启用。Internet Explorer自IE 11开始支持HTTP/2，但仅限于Windows 10 Beta，并默认情况激活。
 
+PS: 我想将性能优化写成一个大纲，仅供大家参考，但是现在还没有完善，希望大家能够补充完善，谢谢。
